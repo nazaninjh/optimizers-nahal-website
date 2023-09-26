@@ -1,0 +1,300 @@
+/* note */
+/* fix position sticky for navbar */
+:root {
+    --green-clr: #6ECB63;
+    --gray-txt-clr: #636262;
+    --gray-mid-clr: #B6B6B6;
+    --gray-light-clr: #F5F5F5;
+    --button-gray: #DBF2D8;
+}
+body {
+    font-size: small;
+    font-family:'Yekan','Times New Roman', Times, serif;
+    overflow-x: hidden;
+    
+}
+/* Webfont: Yekan */
+/* Webfont: Yekan */
+@font-face {
+	font-family: 'Yekan';
+	src:	url('./fonts/yekan/Yekan.woff2') format('woff2'); /* Modern Browsers */
+	src:	url('./fonts/yekan/Yekan.woff') format('woff'), /* Modern Browsers */
+			url('./fonts/Yekan.otf') format('opentype'), /* Open Type Font */	
+			url('./fonts/yekan/Yekan.ttf') format('truetype'); /* Safari, Android, iOS */
+	font-weight: bold;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	font-display: auto;
+}
+/* start of top header */
+
+#top-header {
+    background-color: var(--green-clr);
+}
+#top-header > button {
+    color: var(--green-clr);
+}
+#sign-up-div {
+    height: 2.5rem;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+#sign-up-div > span > a {
+  color: var(--gray-txt-clr);
+}
+.line-icon {
+    width: 2px;
+    height: 20px;
+    /* width="2" 
+    height="42" */
+}
+.shop-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* width="30" height="30" */
+}
+.heart-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* width="30" height="30" */
+}
+
+#log-in-icon > svg{
+     /* width: 20px;
+     height: 25px; */ 
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+#search-icon {
+    /* width: 30px;
+    height: 30px; */
+    /* width="30" height="30 */
+    width: 20px;
+    height: 20px;
+    bottom: 10px;
+    right: 2px;
+}
+.navbar-brand > img {
+    /* width: 130px;
+    height: 74px; */
+    width: 3rem;
+    height: 2rem;
+}
+
+#nav-brand-search-cont > form > input[type="search"]
+{
+   background-color: var(--gray-light-clr);
+   border-color: var(--gray-light-clr);
+   width: 8rem;  
+   height: 2.4rem;
+   padding: 0.5rem 2rem;
+}
+
+#nav-brand-search-cont > form > input[type="search"]::placeholder {
+    color: var(--gray-mid-clr);
+}
+#nav-brand {
+    font-size: 1rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 1rem;  
+    
+}
+/* make top header responsive */
+@media screen and (min-width:576px) {
+    #top-header > button {
+        font-size:medium;
+    }
+    .navbar-brand > img {
+        /* width: 130px;
+        height: 74px; */
+        width: 5rem;
+        height: 4rem;
+    }
+    #nav-brand-search-cont > form > input[type="search"] {
+        
+        width: 13rem;  
+        height: 3rem;
+        padding: 0.5rem 2rem;
+    }
+    #search-icon {
+        width: 25px;
+        height: 25px;
+        bottom: 10px;
+        right: 2px;
+    }
+    #sign-up-div {
+        width: 8.5rem;
+        height: 3rem; 
+    }
+    .heart-icon {
+        width: 25px;
+        height: 25px;
+        /* width="30" height="30" */
+    }
+    .shop-icon {
+        width: 25px;
+        height: 25px;
+        /* width="30" height="30" */
+    }
+    .line-icon {
+        width: 2px;
+        height: 35px;
+        /* width="2" 
+        height="42" */
+    } 
+}
+@media screen and (min-width:768px) {
+    body {
+        font-size: medium;
+    }
+    #top-header > button {
+        font-size:large;
+    }
+    .navbar-brand > img {
+        /* width: 130px;
+        height: 74px; */
+        width: 5rem;
+        height: 4rem;
+    }
+    #nav-brand-search-cont > form > input[type="search"] {
+        width: 20rem;  
+        height: 3rem;
+        padding: 0.5rem 2rem;
+    }
+    
+}
+
+@media screen and (min-width:992px) {
+    #nav-brand-search-cont > form > input[type="search"] {
+        width: 30rem;  
+        height: 3rem;
+        padding: 0.5rem 2rem;
+    }
+}
+/* to do */
+/* fix main page a tag style to match others */
+/* .slider-btn-cont {
+    display: flex;
+} */
+/* #preview-icon-cont, #next-icon-cont {
+    background-image: url(./pics/Ellipse\ 20.png);
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    background-size: 2rem 2rem;
+    justify-content: center;
+    position: relative;
+    bottom:4rem;
+    right: 0.5rem; 
+}
+#next-icon-cont {
+   right: 22rem;
+}
+
+#prev-btn, #next-btn {
+    background-color: transparent;
+    border: none;
+    align-items: center;
+}
+#under-slider-txt {
+    line-height: 1rem;
+} */
+
+.carousel-indicators button {
+    border-radius: 100% !important;
+    width: 5px !important;
+    height: 5px !important;  
+}
+.carousel-indicators > button[data-bs-slide-to="0"] {
+    border-radius: 50% !important;
+    width: 1rem !important;
+    height: 5px !important;
+}
+.office-img-cont {
+    display: flex;
+    justify-content: center;
+}
+.office-img {
+    background-image: url(./pics/undraw_in_the_office_re_jtgc\ 1.png);
+    width: 12rem;
+    height: 10rem;
+    background-size: 12rem 10rem;
+    text-align: center;
+}
+.card {
+    border: 5px var(--green-clr) solid;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    
+}
+.card-text {
+    font-weight: bold !important;
+    color: var(--gray-txt-clr);
+}
+.card-body  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-body > a {
+    background-color: var(--green-clr);
+    color: white;
+}
+.card-3-img, .card-2-img,
+ .card-1-img, .card-6-img,
+  .card-5-img, .card-4-img {
+    border: solid var(--green-clr) 2px;
+    border-radius: 50%;
+    padding: 0.5rem; 
+}
+.card-3-img > img, .card-2-img >
+ img, .card-1-img > img,
+  .card-6-img > img, .card-5-img > img,
+   .card-4-img > img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.html-framework-text {
+    text-decoration: underline;
+    text-decoration-color: #EC9CD3;
+}
+#html-framework-card {
+    border: 1px solid var(--gray-mid-clr);
+}
+#html-framework-card button {
+    background-color: var(--gray-mid-clr);
+    color: white;
+    bottom: 40vh;
+    right: 1vw;
+    align-items: center;
+}
+#html-framework-card #html-framework-card-dark-btn {
+    background-color: var(--gray-txt-clr);
+}
+#html-framework-title {
+    background-color: var(--button-gray);
+    width: max-content;
+    padding: 0.5rem;
+    margin:0 auto;
+    color: var(--gray-txt-clr);
+    border-radius: 7px;
+    
+}
+#img-plus-eye-icon {
+    height: 48vh !important;
+}
+#html-framework-shop-icon {
+    border: solid var(--gray-mid-clr) 1px;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
