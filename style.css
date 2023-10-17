@@ -1,17 +1,32 @@
 /* note */
 /* fix position sticky for navbar */
+/* to do */
+/* make the green cards responsive (font and sizes)  */
+/* add scroller for large texts */
+/* use swipper for card slider */
+/* make the framework cards responsive */
+/* make the js card alignment in col-12 mode in the middle1 */
+/* js cards need time icon */
+/* add the hover effect for js cards */
+/* fix final footer for sm size */
+
 :root {
     --green-clr: #6ECB63;
+    --gray-dark-clr: #4A4A4A;
     --gray-txt-clr: #636262;
     --gray-mid-clr: #B6B6B6;
     --gray-light-clr: #F5F5F5;
     --button-gray: #DBF2D8;
+    --light-pink-clr: #E9E3E2;
+    --dark-pink-clr: #978481;
+    --peach-clr: #EBCDCF;
+    /* override the size of nav buttons of swiper */
+    --swiper-navigation-size: 1rem !important;
 }
 body {
     font-size: small;
     font-family:'Yekan','Times New Roman', Times, serif;
-    /* overflow-x: hidden; */
-    
+    overflow-x: hidden; 
 }
 /* Webfont: Yekan */
 /* Webfont: Yekan */
@@ -181,7 +196,6 @@ body {
 .carousel {
     position: relative;
     width: 100%;
-    
 }
 .carousel-track-container {
     position: inherit;
@@ -224,15 +238,14 @@ body {
 }
 .carousel-nav {
     display: flex;
-    gap: 4px;
+    gap: 0.7vw;
     position: absolute;
-    top: 20vw;
-    right: 35%;
-    justify-content: center;
-    text-align: center;
+    top: 19vw;
     z-index: 1;
     padding: 10px 0;
-    
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
 }
 
 /* to do: use media to make carousel-nav responsive */
@@ -241,15 +254,28 @@ body {
     z-index: 1;
     border: 0;
     border-radius: 50%;
-    width: 3px;
-    height: 3px;
-    background-color: rgba(99, 98, 98,0.3);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgba(99, 98, 98,0.3);   
     
 }
 .carousel-indicator.current-slide {
     background-color: white;
-    width: 7px;
+    width: 1.2rem;
     border-radius: 1rem;
+}
+@media screen and (min-width:778px) {
+    .carousel-indicator {
+        width: 0.7rem;
+        height: 0.7rem;  
+    }
+    .carousel-indicator.current-slide {
+        width: 1.7rem;
+    }
+    .carousel-button {
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 #under-slider-txt {
@@ -266,6 +292,8 @@ body {
     background-size: 12rem 10rem;
     text-align: center;
 }
+
+
 .card {
     border: 5px var(--green-clr) solid;
     border-radius: 1.5rem;
@@ -300,61 +328,105 @@ body {
     width: 2.5rem;
     height: 2.5rem;
 }
-.wrapper {
-    display: flex;
-    justify-content: space-evenly; 
+
+#swiper-el{
     position: relative;
-    max-width: 1100px;
-    width: 100%;
-    overflow: auto;
+    border: 1px solid var(--gray-mid-clr);
+    border-radius: 1.2rem;
+    max-width: 14rem;
+    width: fit-content;  
+    height: fit-content; 
+    cursor: grab;
+    padding: 0;
 }
-.card-carousel {
+#swiper-el button {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--gray-mid-clr);
+    color: white;
+    bottom: 10rem;
+    right: 4rem;
+    padding: 0px;
+}
+#img-plus-eye-icon {
+    height: 55%;
+}
+#img-plus-eye-icon img{
+  /* filter: contrast(120%); */
+  width: 100%;
+}
+.swiper-navBtn {
+    color: black !important;
+    background-color: white;
+    height: 2rem !important;
+    width: 2rem !important;
+    border-radius: 50%;
+}
+
+
+
+/* .media-scroller {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: calc((100% /2) -9px);
-    gap: 0.2rem;
-}
-.html-framework-text {
-    text-decoration: underline;
-    text-decoration-color: #EC9CD3;
-}
-.media-scroller {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 24.5%;
+    grid-auto-columns: 50%;
     gap: 8px;
-    /* overflow-x: auto; */
-    /* contain the scroll behavior so other
-     elements won't scroll with it */
-    /* overscroll-behavior-inline: contain; */
+    overflow-x: scroll;
+    contain the scroll behavior so other
+     elements won't scroll with it 
+    overscroll-behavior-inline: contain;
     height: auto;
     padding: 5px 0;
 }
-.snaps-inline {
-    scroll-snap-type: inline mandatory;
 
+hide the scrollbar
+.media-scroller::-webkit-scrollbar {
+    display:none !important;
 }
-.snaps-inline > * {
-    scroll-snap-align: start;
+@media screen and (min-width:576px) {
+    .media-scroller {
+        grid-auto-columns: calc(100% / 3);
+    }
 }
+@media screen and (min-width:778px) {
+    .media-scroller {
+        grid-auto-columns: 24.5%;
+    }
+}
+
+
 .media-scroller .media-element{
     border: 1px solid var(--gray-mid-clr);
     border-radius: 1.2rem;
 }
 .media-element {
     width: 100%;   
+    cursor: grab;
 }
 .media-element button {
     width: 2rem;
     height: 2rem;
     background-color: var(--gray-mid-clr);
     color: white;
-    bottom: 80%;
+    bottom: 35vw;
     right: 1vw;
     padding: 0px;
 }
+
 #img-plus-eye-icon {
-    height: 48vh !important;
+    height: 55%;
+}
+#img-plus-eye-icon img{
+  filter: contrast(120%);
+}
+@media screen and (min-width:1000px) {
+    #img-plus-eye-icon {
+        height: 60%;
+    }
+} */
+.html-framework-text {
+    text-decoration: underline;
+    text-decoration-color: #EC9CD3;
+    text-underline-offset: 0.7rem;
 }
 #html-framework-card #html-framework-card-dark-btn {
     background-color: var(--gray-txt-clr);
@@ -386,49 +458,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.media-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    width: 1.5rem;
-    height: 1.5rem;
-    position: absolute;
-    top: 18.8vw;
-    transform: translateY(-50%);
-    border: solid 1px var(--gray-txt-clr);
-    border-radius: 50%;
-}
-#media-btn-right {
-  right: 3vw;
-}
-#media-btn-left {
-  left: 3vw;
-}
 
-
-
-/* 
-.wrapper > .fa-angle-right, .wrapper .fa-angle-left {
-    z-index: 1 !important;
-    position: absolute;
-    text-align: center;
-    line-height: 2rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
-    border: 1px var(--gray-txt-clr) solid;
-    font-size: 1rem;
-    right: 1rem;
-    top: 45%;
-    cursor: pointer;
-}
-.wrapper .fa-angle-left {
-    right: 90%;
-    top: 45%;
-} */
 
 
 .small-cards-cont .card {
@@ -461,3 +491,160 @@ body {
         line-height: 0.9rem;
     }
 }
+
+.plan-card {
+    border: var(--gray-txt-clr);
+}
+.plan-card .card-header {
+    background-color: var(--light-pink-clr);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.plan-card .ul-and-text {
+    display: none;
+    list-style-image: url(./pics/bullet-list-vector.png);  
+}
+.plan-card > .card-body button {
+    background-color: var(--dark-pink-clr);
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0 2px 3px var(--gray-txt-clr);
+}
+.plan-card .ul-and-text button {
+    background-image: url(./pics/arrow-up-vector.png);
+    background-color: var(--dark-pink-clr);
+    background-repeat: no-repeat;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 0.7rem 0.7rem;
+    background-position: center;
+    display: flex;
+    align-content: center;
+    margin-top: 1rem;
+}
+.mobile-app-text {
+    text-decoration: underline;
+    text-decoration-color: #EC9CD3;
+    text-underline-offset: 0.7rem;
+}
+#mobile-app-title {
+    background-color: var(--button-gray);
+    
+    padding: 0.5rem;
+    color: var(--gray-txt-clr);
+    border-radius: 7px; 
+}
+#mobile-app-shop-icon {
+    border: solid var(--gray-mid-clr) 1px;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobile-app-card {
+  border: var(--gray-mid-clr) 1px solid;
+}
+.undraw-img-cont {
+    display: flex;
+    justify-content: center;
+}
+.undraw-img {
+    background-image: url(./pics/undraw_content_re_33px\ \(1\)\ 1.png);
+    width: 12rem;
+    height: 10rem;
+    background-size: 12rem 10rem;
+    text-align: center;
+}
+.js-card {
+    outline: var(--peach-clr) 5px solid;
+    border: white 0.5px solid;
+    position: relative;
+   
+}
+.test {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+ border-radius: 25px 25px 10px 10px;
+}
+.js-card .card-body {
+    display: flex;
+    gap: 10px;
+    
+}
+.js-card .card-text {
+    /* height: 115px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; */
+   
+}
+.js-card button {
+    background-color: var(--peach-clr);
+    color: white;
+    padding: 0.9rem 0.7rem;
+    border-radius: 1rem;  
+    z-index: 1;
+    
+}
+/* to do: close btn vector */
+.js-card .js-card-close-btn {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    height: auto;
+    position: absolute; 
+    left: 0.5vw;
+
+}
+.js-card .time-cont {
+    height: 1rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+.js-card .time-cont > .col-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: #7E869E40;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+}
+.js-card .time-cont > .col-3 {
+    height: fit-content;
+}
+footer {
+   
+}
+footer hr:nth-child(1) {
+    background-color: var(--green-clr);
+    opacity: 1;
+    height: 0.2rem;
+    border-top: none;
+}
+footer .footer-group p {
+    font-size: small;
+    cursor: pointer;
+}
+footer .footer-group p:first-child {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    color: var(--gray-dark-clr) !important;
+}
+footer .col-6 > .enamad-img {
+  max-width: 10rem;
+  max-height: 10rem;
+}
+footer .final-footer p {
+    font-size: small;
+}
+footer .final-footer div:first-child {
+    text-align: start;
+}
+

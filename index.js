@@ -69,31 +69,104 @@ carouselNav.addEventListener("click",(e) => {
 // end of image carousel
 
 // create card slider
-const mediaScroller = document.querySelector(".media-scroller");
-const mediaElements = Array.from(mediaScroller.querySelectorAll(".media-element"))
-const nextMediaButton = document.querySelector("#media-btn-left");
-const prevMediaButton = document.querySelector("#media-btn-right");
 
-// get width of each card + the gap
-const mediaElementWidth = mediaElements[0].getBoundingClientRect().width + 8;
-const mediaElementTotalWidth = mediaElementWidth + 8;
-console.log(mediaElementWidth);
-console.log(mediaElementTotalWidth);
-
-const setMediaPosition = (media, index) => {
-  media.style.right =  mediaElementTotalWidth * index + "px";
-};
-mediaElements.forEach(setMediaPosition);
-
-//how to have multiple current elements?
-
-// nextMediaButton.addEventListener("click", e => {
-//   // which slide are we on? 
-//   const currentMediaEl = mediaScroller.querySelector(".current-slide");
-//   const nextSlide = currentSlide.nextElementSibling;
-//   // move the next slide
-//   moveToSlide(track, currentSlide, nextSlide);
-//   const currentIndicator = carouselNav.querySelector(".current-slide");
-//   const nextIndicator = currentIndicator.nextElementSibling;
-//   updateIndicator(currentIndicator, nextIndicator);
+// const mediaScroller = document.querySelector(".media-scroller");
+// const mediaElements = Array.from(mediaScroller.querySelectorAll(".media-element"));
+// const mediaPrevBtn = document.getElementById("media-btn-right");
+// const mediaNextBtn = document.getElementById("media-btn-left");
+// mediaScroller.addEventListener("wheel", (e) => {
+//   e.preventDefault();
+//   mediaScroller.scrollLeft += e.deltaY;
 // });
+// // get the width of the mediaScroller
+// const mediaScrollerWidth = mediaScroller.getBoundingClientRect().width;
+// console.log(mediaScrollerWidth);
+// mediaNextBtn.addEventListener("click", () => {
+//   mediaScroller.scrollLeft -= mediaScrollerWidth;
+// })
+// mediaPrevBtn.addEventListener("click", () => {
+//   mediaScroller.scrollLeft += mediaScrollerWidth;
+// } )
+//  to do: fix the position of the next and prev so they remain where they are through the container with css
+// end of card slider
+
+// start of swiper
+const swiperEl = document.querySelector(".swiper");
+var swiper = new Swiper(".slide-container", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  slidesPerGroup: 4,
+  loop: true,
+  centerSlide: "true",
+  grabCurser: "true",
+  fade: "true",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+// const swiperParams = {
+//   breakPoints: {
+//     0: {
+//       slidesPerView: 1,
+//     },
+//     576: {
+//       slidesPerView: 2,
+//     },
+//     768: {
+//       slidesPerView: 3,
+//     },
+//     992: {
+//       slidesPerView: 4,
+//     },
+    
+//   },
+  
+//   on: {
+//     init() {
+//       // ...
+//     },
+//   },
+// }
+// Object.assign(swiperEl, swiperParams);
+// swiperEl.initialize();
+// use plan-card button to show / hide content
+
+
+const planCards = Array.from(document.querySelectorAll(".plan-card"));
+const planCardBtns = Array.from(document.querySelectorAll(".plan-card-btn"));
+const closePlanBtns = Array.from(document.querySelectorAll(".close-plan-btn"));
+const planCardUls = [];
+for (card of planCards) {
+  let cardUl = card.querySelector(".ul-and-text");
+  planCardUls.push(cardUl);
+}
+
+planCardBtns.forEach(btn => btn.addEventListener("click", ()=> {
+  // which btn was clicked?
+  let btnIndex = planCardBtns.indexOf(btn);
+  planCardUls[btnIndex].style.display = "block";
+  // hide the read-more btn and display another btn
+  btn.style.display = "none";
+  closePlanBtns.forEach(closeBtn => closeBtn.addEventListener("click", () => {
+    let closeBtnIndex = closePlanBtns.indexOf(closeBtn);
+    planCardUls[btnIndex].style.display = "none";
+    btn.style.display = "block";
+  }))
+
+}));
+// end of plan cards
+
+// add closing function for js cards
+const jsCards = Array.from(document.querySelectorAll(".js-card"));
+const jsCardsCloseBtns = Array.from(document.querySelectorAll(".js-card-close-btn"));
+console.log(jsCardsCloseBtns);
+console.log(jsCards);
+// when clicked, remove the js card
+jsCardsCloseBtns.forEach(btn => {
+  btn.addEventListener("click", e => {
+    // find the index
+    const btnIndex = jsCardsCloseBtns.indexOf(btn);
+    jsCards[btnIndex].style.display = "none";
+  });
+})
