@@ -1,3 +1,6 @@
+
+
+
 // create image carousel
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(track.children);
@@ -68,27 +71,7 @@ carouselNav.addEventListener("click",(e) => {
 
 // end of image carousel
 
-// create card slider
 
-// const mediaScroller = document.querySelector(".media-scroller");
-// const mediaElements = Array.from(mediaScroller.querySelectorAll(".media-element"));
-// const mediaPrevBtn = document.getElementById("media-btn-right");
-// const mediaNextBtn = document.getElementById("media-btn-left");
-// mediaScroller.addEventListener("wheel", (e) => {
-//   e.preventDefault();
-//   mediaScroller.scrollLeft += e.deltaY;
-// });
-// // get the width of the mediaScroller
-// const mediaScrollerWidth = mediaScroller.getBoundingClientRect().width;
-// console.log(mediaScrollerWidth);
-// mediaNextBtn.addEventListener("click", () => {
-//   mediaScroller.scrollLeft -= mediaScrollerWidth;
-// })
-// mediaPrevBtn.addEventListener("click", () => {
-//   mediaScroller.scrollLeft += mediaScrollerWidth;
-// } )
-//  to do: fix the position of the next and prev so they remain where they are through the container with css
-// end of card slider
 
 // start of swiper
 const swiperEl = document.querySelector(".swiper");
@@ -130,6 +113,7 @@ var swiper = new Swiper(".slide-container", {
 // }
 // Object.assign(swiperEl, swiperParams);
 // swiperEl.initialize();
+
 // use plan-card button to show / hide content
 
 
@@ -146,6 +130,7 @@ planCardBtns.forEach(btn => btn.addEventListener("click", ()=> {
   // which btn was clicked?
   let btnIndex = planCardBtns.indexOf(btn);
   planCardUls[btnIndex].style.display = "block";
+  // planCardUls[btnIndex].style.height = "100%";
   // hide the read-more btn and display another btn
   btn.style.display = "none";
   closePlanBtns.forEach(closeBtn => closeBtn.addEventListener("click", () => {
@@ -160,8 +145,6 @@ planCardBtns.forEach(btn => btn.addEventListener("click", ()=> {
 // add closing function for js cards
 const jsCards = Array.from(document.querySelectorAll(".js-card"));
 const jsCardsCloseBtns = Array.from(document.querySelectorAll(".js-card-close-btn"));
-console.log(jsCardsCloseBtns);
-console.log(jsCards);
 // when clicked, remove the js card
 jsCardsCloseBtns.forEach(btn => {
   btn.addEventListener("click", e => {
@@ -170,3 +153,21 @@ jsCardsCloseBtns.forEach(btn => {
     jsCards[btnIndex].style.display = "none";
   });
 })
+
+// add hover effect for js card
+const jsImgs = [];
+jsCards.forEach(card => jsImgs.push(card.firstElementChild));
+jsImgs.forEach(img => img.addEventListener("mouseover", (event) => {
+  event.target.nextElementSibling.style.display = "block";
+}));
+// make the disappearing of element smoother
+jsImgs.forEach(img => img.addEventListener("mouseout", (event) => {
+  event.target.nextElementSibling.style.display = "none";
+}));
+
+// create sticky navbar
+const navBar = document.querySelector(".navbar-sticky-container");
+window.addEventListener("scroll", addSticky);
+function addSticky() {
+  navBar.classList.toggle("sticky", window.scrollY > 0)
+}
