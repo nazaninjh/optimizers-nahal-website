@@ -50,20 +50,16 @@ body {
 .line-icon {
     width: 2px;
     height: 20px;
-    /* width="2" 
-    height="42" */
 }
 .shop-icon {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    /* width="30" height="30" */
 }
 .heart-icon {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    /* width="30" height="30" */
 }
 
 #log-in-icon > svg{
@@ -72,7 +68,6 @@ body {
     cursor: pointer;
 }
 #search-icon {
-    
     width: 20px;
     height: 20px;
     bottom: 10px;
@@ -264,26 +259,29 @@ body {
     border: 1px solid var(--gray-mid-clr);
     border-radius: 1.2rem;
     width: fit-content;
-    height: fit-content;
+    height: auto;
     max-width: 18rem;
-    cursor: grab;
     padding: 0;
-    user-select: none;  
 }
 .product-card .text-card {
     padding: 0 0.5rem;
+    font-size: 1rem;
 }
 .product-card .card-body {
+    padding-top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    color: var(--gray-txt-clr);
 }
 @media screen and (min-width:1010px) {
     .product-card .card-body {
         height: 18rem;
     }
 }
-
+.img-plus-eye-icon {
+    height: auto;
+}
 .img-plus-eye-icon button {
     position: relative;
     width: 2rem;
@@ -298,12 +296,17 @@ body {
     filter: contrast(120%);
     width: 100%;
 }
+.product-card .product-card-header {
+    color: var(--gray-dark-clr);
+    padding: 0;
+    margin: 0;
+}
 .product-card-title {
     background-color: var(--button-gray);
     padding: 0.5rem;
     color: var(--gray-txt-clr);
     border-radius: 7px; 
-    font-size: 0.6rem;
+    font-size: 0.7rem;
 }
 .product-card-title + p {
     color: var(--gray-txt-clr);
@@ -315,7 +318,8 @@ body {
     width: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
+    cursor: pointer;   
 }
 .pagination > .page-item-cont  .page-item.active > a {
     background-color: var(--green-clr);
@@ -344,9 +348,8 @@ body {
     outline: none;
 }
 
-footer {
-    padding: 0 !important;
-    margin: 0 !important;
+footer > * {
+   padding: 0 1rem !important;
 }
 
 footer hr:nth-child(1) {

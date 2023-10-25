@@ -1,6 +1,4 @@
-/* note */
-/* fix pink circle */
-/* fix green card height */
+/* give pointer event to shop icons */
 :root {
     --green-clr: #6ECB63;
     --gray-dark-clr: #4A4A4A;
@@ -56,14 +54,11 @@ body {
 .line-icon {
     width: 2px;
     height: 20px;
-    /* width="2" 
-    height="42" */
 }
 .shop-icon {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    /* width="30" height="30" */
 }
 .heart-icon {
     width: 20px;
@@ -132,7 +127,6 @@ body {
         height: 4rem;
     }
     #nav-brand-search-cont > form > input[type="search"] {
-        
         width: 13rem;  
         height: 3rem;
         padding: 0.5rem 2rem;
@@ -172,8 +166,6 @@ body {
         font-size:large;
     }
     .navbar-brand > img {
-        /* width: 130px;
-        height: 74px; */
         width: 5rem;
         height: 4rem;
     }
@@ -189,8 +181,7 @@ body {
     #nav-brand-search-cont > form > input[type="search"] {
         width: 30rem;  
         height: 3rem;
-        padding: 0.5rem 2rem;
-        
+        padding: 0.5rem 2rem; 
     }
 }
 
@@ -205,7 +196,6 @@ body {
     
 }
 .carousel-track {
-    
     padding: 0;
     margin: 0;
     position: relative;
@@ -296,15 +286,15 @@ body {
 .green-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 0.8rem;
     border: 5px var(--green-clr) solid;
     border-radius: 1.5rem;
     margin: 0 auto;
     margin-top: 1rem;
     position: relative;
     width: fit-content;
-    height: max-content;
-    max-width: 19rem;
+    height: auto;
+    max-width: 18rem;
     cursor: grab;
     padding: 0.8rem;
     user-select: none;  
@@ -312,29 +302,38 @@ body {
 .green-card .card-title {
     font-size: medium;
 }
+
 .green-card .card-text {
+    display: flex;
+    align-items: center;
     font-weight: bold !important;
+    font-size: 1rem;
     color: var(--gray-txt-clr);
-}
-.green-card .card-text {
-    height: 10rem;
+    height: 13.2rem;
     padding: 1rem;
 }
 @media screen and (min-width:576px) {
-    /* .green-card .card-text {
-        height: 11rem;
-        overflow-y: auto;
-    } */
+    .green-card .card-text {
+        height: 13.5rem;
+    }
 }
-/* .green-card .card-body  {
+@media screen and (min-width: 778px) {
+    .green-card .card-text {
+        height: 14rem;
+    }
+}
+
+.green-card .card-body  {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-} */
+    justify-content: space-around;
+    height: fit-content;
+}
 .green-card .card-body > a {
     background-color: var(--green-clr);
     color: white;
-    font-size: small;
+    font-size: medium;
+    padding: 0.5rem;
 }
 @media screen and (min-width:778px) {
     .green-card .card-body > a {
@@ -344,19 +343,12 @@ body {
         font-size: larger;
     }
 }
-@media screen and (min-width: 778px) {
-    /* .green-card .card-body {
-        height: 16rem;
-    } */
-}
-@media screen and (min-width:1010px) {
-    /* .green-card .card-body {
-        height: 18rem;
-    } */
-}
+
 .card-3-img, .card-2-img,
  .card-1-img, .card-6-img,
-  .card-5-img, .card-4-img {
+  .card-5-img, .card-4-img,
+  .card-7-img, .card-8-img, .card-9-img,
+  .card-10-img, .card-11-img, .card-12-img {
     border: solid var(--green-clr) 2px;
     border-radius: 50%;
     padding: 0.5rem; 
@@ -367,22 +359,37 @@ body {
 .card-3-img > img, .card-2-img >
  img, .card-1-img > img,
   .card-6-img > img, .card-5-img > img,
-   .card-4-img > img {
+   .card-4-img > img,
+   .card-7-img > img,
+   .card-8-img > img,
+   .card-9-img > img,
+   .card-10-img > img,
+   .card-11-img > img,
+   .card-12-img > img {
     width: 2.5rem;
     height: 2.5rem;
 }
 @media screen and (min-width:992px) {
     .card-3-img > img, .card-2-img >
- img, .card-1-img > img,
-  .card-6-img > img, .card-5-img > img,
-   .card-4-img > img {
+    img, .card-1-img > img,
+     .card-6-img > img, .card-5-img > img,
+      .card-4-img > img,
+      .card-7-img > img,
+      .card-8-img > img,
+      .card-9-img > img,
+      .card-10-img > img,
+      .card-11-img > img,
+      .card-12-img > img  {
     width: 3rem;
     height: 3rem;
   }
   .card-3-img, .card-2-img,
-  .card-1-img, .card-6-img,
-  .card-5-img, .card-4-img {
-    border: solid var(--green-clr) 3px;
+ .card-1-img, .card-6-img,
+  .card-5-img, .card-4-img,
+  .card-7-img, .card-8-img,
+   .card-9-img, .card-10-img,
+    .card-11-img, .card-12-img  {
+    border: solid var(--green-clr) 3px !important;
     padding: 0.7rem; 
 }
 }
@@ -420,7 +427,10 @@ body {
     width: 2rem !important;
     border-radius: 50%;
 }
-
+.swiper-el button > i {
+    text-align: center;
+    line-height: 1.9rem;
+}
 .html-framework-text {
     text-decoration: underline;
     text-decoration-color: #EC9CD3;
@@ -429,10 +439,7 @@ body {
 .html-framework-card-dark-btn {
     background-color: var(--gray-txt-clr);
 }
-.swiper-el button > i {
-    text-align: center;
-    line-height: 1.9rem;
-}
+
 #html-framework-title {
     background-color: var(--button-gray);
     width: max-content;
@@ -452,6 +459,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .small-card-cont {
     display: flex;
@@ -504,6 +512,9 @@ body {
 .plan-card .card-header > p {
     font-size: medium;
 }
+.plan-card .card-body {
+    background-color: white;
+}
 
 @media screen and (min-width:576px) and (max-width:778px) {
     .plan-card .card-header {
@@ -531,11 +542,6 @@ body {
     display: none;
     list-style-image: url(./pics/bullet-list-vector.png);  
 }
-.plan-card img {
-    position: relative;
-    bottom: 10rem;
-    z-index: 0;
-}
 .plan-card > .card-body button {
     background-color: var(--dark-pink-clr);
     color: white;
@@ -547,9 +553,9 @@ body {
     background-image: url(./pics/arrow-up-vector.png);
     background-color: var(--dark-pink-clr);
     background-repeat: no-repeat;
-    width: 2.5rem;
+    width: 3rem;
     height: 2.5rem;
-    background-size: 0.7rem 0.7rem;
+    background-size: 0.9rem 0.7rem;
     background-position: center;
     display: flex;
     align-content: center;
@@ -574,11 +580,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .mobile-app-card {
   border: var(--gray-mid-clr) 1px solid;
-  border-top-right-radius: 1.5rem;
-  border-top-left-radius: 1.5rem;
+  border-radius: 1.5rem;
+  max-width: 18rem;
 }
 .undraw-img-cont {
     display: flex;
@@ -594,57 +601,32 @@ body {
 .js-card {
     outline: var(--peach-clr) 5px solid;
     border: white 0.5px solid;
-    border-top-right-radius: 1.5rem;
-    border-top-left-radius: 1.5rem;
-    /* height: 600px; */
+    border-radius: 1.5rem;
     width: fit-content;
-    height: fit-content;
-    max-width: 20rem;
+    height: auto;
+    max-width: 18rem;
     margin: 0 auto;
     padding: 0;
     position: relative;
 }
-.js-card .card-text {
-    overflow-y: auto;
+.js-card .card-title {
+    color: var(--gray-dark-clr);
 }
+.js-card .card-text{
+    display: flex;
+    align-items: center;
+    height: 10rem ;
+    font-size: 1rem;
+    color: var(--gray-txt-clr);
+} 
+
 .js-card .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; 
+    justify-content: space-between;
+    height: auto;
 }
-@media screen and (min-width:1010px) {
-    .js-card .card-body {
-        height: 19rem;
-    }
-    .js-card .card-text {
-        overflow-y: visible;
-    }
-}
-.js-card .card-text {
-    /* height: 115px;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; */
-   
-}
-/* @media screen and (max-width:550px) {
-    .js-card {
-        height: min-content !important;
-    }
-    .js-card .card-body .card-text {
-        height: 5rem;
-        overflow: auto;
-    }
-}
-@media screen and (min-width:551px) and (max-width:778px) {
-    .js-card {
-        height: min-content !important;
-    }
-    .js-card .card-body .card-text {
-        height: 7rem;
-       overflow: auto;
-    }
-} */
+
 .js-card-hover-effect {
   display: none;
   background-color: rgba(0, 0, 0, 0.75);
@@ -696,9 +678,13 @@ body {
     left: 0.5vw;
 }
 .js-card .time-cont {
+    gap: 0.5rem;
     height: 1rem;
     margin-top: 0.5rem;
     margin-right: 0.5rem;
+}
+.js-card .time-cont p {
+    color: var(--gray-mid-clr);
 }
 .js-card .time-cont > .col-1 {
     display: flex;
@@ -713,8 +699,8 @@ body {
 .js-card .time-cont > .col-3 {
     height: fit-content;
 }
-footer {
-    padding: 0 1.5rem !important;
+footer > * {
+    padding: 0 1rem !important;
 }
 
 footer hr:nth-child(1) {
