@@ -19,7 +19,7 @@
 body {
     font-size: small;
     font-family:'Yekan','Times New Roman', Times, serif;
-    overflow-x: hidden !important; 
+   
 }
 /* Webfont: Yekan */
 /* Webfont: Yekan */
@@ -35,7 +35,11 @@ body {
 	font-display: auto;
 }
 /* start of top header */
-
+.all-container {
+    /* moved overflow hidden from body tag to a wrapper */
+    /* because of incompatibility to android devices */
+    overflow-x: hidden !important; 
+}
 #top-header {
     background-color: var(--green-clr);
 }
