@@ -17,7 +17,7 @@
 body {
     font-size: small;
     font-family:'Yekan','Times New Roman', Times, serif;
-    overflow-x: hidden; 
+    overflow-x: hidden !important; 
 }
 @font-face {
 	font-family: 'Yekan';
