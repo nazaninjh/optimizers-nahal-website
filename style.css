@@ -35,7 +35,9 @@ body {
 	font-display: auto;
 }
 /* start of top header */
-
+#all-cont {
+    overflow-x: hidden;
+}
 #top-header {
     background-color: var(--green-clr);
 }
