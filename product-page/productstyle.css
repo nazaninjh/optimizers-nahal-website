@@ -91,6 +91,9 @@ body {
 #nav-brand-search-cont > form > input[type="search"]::placeholder {
     color: var(--gray-mid-clr);
 }
+.navbar .dropdown-menu .dropdown-item {
+    font-size: 0.7rem;
+}
 #nav-brand {
     font-size: 1rem;
     text-decoration: underline;
@@ -337,8 +340,6 @@ body {
 }
 .pagination  .next-pagination,
 .pagination .pre-pagination {
-    display: flex;
-    align-items: center;
     width: fit-content;
     padding: 0;
 }
@@ -348,9 +349,9 @@ body {
 }
 .pagination  .next-pagination img,
 .pagination .pre-pagination img {
-    width: 10px;
-    height: 10px;
-    padding: 2px 2px;
+    width: 8px;
+    height: 8px;
+   
 }
 @media screen and (min-width:500px) {
     .pagination  .next-pagination span,
@@ -373,7 +374,7 @@ body {
 .pagination > .page-item > a span {
     color: var(--green-clr);
 }
-@media screen and (max-width:352px) {
+@media screen and (max-width:420px) {
     .pagination  .next-pagination span,
     .pagination .pre-pagination span {
         display: none;
