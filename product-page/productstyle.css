@@ -1,4 +1,5 @@
 
+/* fix next and prev paginations */
 :root {
     --green-clr: #6ECB63;
     --gray-dark-clr: #4A4A4A;
@@ -321,16 +322,47 @@ body {
     align-items: center;
     cursor: pointer;   
 }
+
 .pagination > .page-item-cont  .page-item.active > a {
     background-color: var(--green-clr);
     color: white;
     border: none;
     border-radius: 50%;
 }
+
 .pagination > .page-item-cont > .page-item  a {
     background-color: transparent;
     color: var(--gray-txt-clr);
     border: none;
+}
+.pagination  .next-pagination,
+.pagination .pre-pagination {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0;
+}
+.pagination  .next-pagination span,
+.pagination .pre-pagination span {
+    font-size: 0.5rem;
+}
+.pagination  .next-pagination img,
+.pagination .pre-pagination img {
+    width: 10px;
+    height: 10px;
+    padding: 2px 2px;
+}
+@media screen and (min-width:500px) {
+    .pagination  .next-pagination span,
+.pagination .pre-pagination span {
+    font-size: 1rem;
+}
+.pagination  .next-pagination img,
+.pagination .pre-pagination img {
+    width: 1rem;
+    height: 1rem;
+    padding: 2px 2px;
+}
 }
 .pagination > .next-pagination > a,
 .pagination > .page-item > a {
@@ -341,11 +373,19 @@ body {
 .pagination > .page-item > a span {
     color: var(--green-clr);
 }
+@media screen and (max-width:352px) {
+    .pagination  .next-pagination span,
+    .pagination .pre-pagination span {
+        display: none;
+    }   
+}
 .pagination .page-item-cont .page-item:hover {
     color: var(--green-clr);
-    border: 2px var(--green-clr) solid;
+    border: 1px var(--green-clr) solid;
     border-radius: 50%;
     outline: none;
+    padding: 0;
+    margin: 0;
 }
 
 footer > * {

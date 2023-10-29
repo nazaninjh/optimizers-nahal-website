@@ -57,12 +57,12 @@ const Pagination = (function () {
     });
     // to use this function, other product pages should be created
     // فانکشن پایین در صورت ساخت صفحات دیگر کار خواهد کرد
-    currentActive = pageItemCont.querySelector(".active");
-    if (currentActive === pageItems[0]) {
-      prev.style.display = "none";
-    } else {
-      prev.style.display = "block";
-    }
+    // currentActive = pageItemCont.querySelector(".active");
+    // if (currentActive === pageItems[0]) {
+    //   prev.style.display = "none";
+    // } else {
+    //   prev.style.display = "block";
+    // }
     prev.addEventListener("click", ()=> {
       currentActive = pageItemCont.querySelector(".active");
       currentActive.previousElementSibling.classList.add("active");
