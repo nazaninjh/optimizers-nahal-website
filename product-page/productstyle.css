@@ -1,5 +1,4 @@
-
-/* fix next and prev paginations */
+/* fix eye icon */
 :root {
     --green-clr: #6ECB63;
     --gray-dark-clr: #4A4A4A;
@@ -113,13 +112,10 @@ body {
         font-size:medium;
     }
     .navbar-brand > img {
-        /* width: 130px;
-        height: 74px; */
         width: 5rem;
         height: 4rem;
     }
     #nav-brand-search-cont > form > input[type="search"] {
-        
         width: 13rem;  
         height: 3rem;
         padding: 0.5rem 2rem;
@@ -137,18 +133,14 @@ body {
     .heart-icon {
         width: 25px;
         height: 25px;
-        /* width="30" height="30" */
     }
     .shop-icon {
         width: 25px;
         height: 25px;
-        /* width="30" height="30" */
     }
     .line-icon {
         width: 2px;
         height: 35px;
-        /* width="2" 
-        height="42" */
     } 
 }
 @media screen and (min-width:768px) {
@@ -180,7 +172,35 @@ body {
         
     }
 }
-
+@media screen and (min-width:1200px) {
+    #sign-up-container {
+        font-size: large;
+    }
+    #sign-up-div {
+        width: fit-content;
+    }
+    #nav-brand-search-cont > form > input[type="search"] {
+        width: 35rem;  
+        height: 3rem;
+        padding: 0.5rem 2rem; 
+    }
+    #nav-brand-search-cont > form > input[type="search"]::placeholder {
+        font-size: 1.3rem;
+    }
+    .navbar #nav-brand {
+        font-size: 1.4rem;
+    }
+    .navbar-brand > img {
+        width: 4rem;
+        height: 3rem;
+    }
+    .navbar .nav-item {
+        font-size: 1.3rem;
+    }
+    .navbar .dropdown-menu .dropdown-item {
+        font-size: 1rem;
+    }
+}
 .card-wrapper {
     padding-right: 2px;
     margin: 0.5rem 1rem;
@@ -262,9 +282,9 @@ body {
     position: relative;
     border: 1px solid var(--gray-mid-clr);
     border-radius: 1.2rem;
-    width: fit-content;
-    height: auto;
+    width: auto;
     max-width: 18rem;
+    height: auto;
     padding: 0;
 }
 .product-card .text-card {
@@ -278,13 +298,14 @@ body {
     justify-content: space-between;
     color: var(--gray-txt-clr);
 }
-@media screen and (min-width:1010px) {
-    .product-card .card-body {
-        height: 18rem;
+
+@media screen and (min-width:1200px) {
+    .product-card {
+        max-width: 25rem;
     }
 }
 .img-plus-eye-icon {
-    height: auto;
+    height: 55%;
 }
 .img-plus-eye-icon button {
     position: relative;
@@ -292,9 +313,25 @@ body {
     height: 2rem;
     background-color: var(--gray-mid-clr);
     color: white;
-    bottom: 12.5rem;
+    bottom: 12rem;
     right: 0.6rem;
     padding: 0px;
+}
+@media screen and (min-width:768px) and (max-width:910px) {
+    .img-plus-eye-icon button {
+        bottom: 10rem;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .img-plus-eye-icon button {
+        bottom: 15rem;
+    }
+}
+@media screen and (min-width:1250px) {
+    .img-plus-eye-icon button {
+        bottom: 17rem;
+    }
 }
 .img-plus-eye-icon img {
     filter: contrast(120%);
@@ -379,6 +416,9 @@ body {
     .pagination .pre-pagination span {
         display: none;
     }   
+}
+.pagination .pre-pagination a {
+    display: none;
 }
 .pagination .page-item-cont .page-item:hover {
     color: var(--green-clr);

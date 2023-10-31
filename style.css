@@ -1,4 +1,4 @@
-/* give pointer event to shop icons */
+
 :root {
     --green-clr: #6ECB63;
     --gray-dark-clr: #4A4A4A;
@@ -66,28 +66,20 @@ body {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    /* width="30" height="30" */
 }
 
 #log-in-icon > svg{
-     /* width: 20px;
-     height: 25px; */ 
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 #search-icon {
-    /* width: 30px;
-    height: 30px; */
-    /* width="30" height="30 */
     width: 20px;
     height: 20px;
     bottom: 10px;
     right: 2px;
 }
 .navbar-brand > img {
-    /* width: 130px;
-    height: 74px; */
     width: 3rem;
     height: 2rem;
 }
@@ -104,6 +96,7 @@ body {
 #nav-brand-search-cont > form > input[type="search"]::placeholder {
     color: var(--gray-mid-clr);
 }
+
 #nav-brand {
     font-size: 1rem;
     text-decoration: underline;
@@ -123,8 +116,6 @@ body {
         font-size:medium;
     }
     .navbar-brand > img {
-        /* width: 130px;
-        height: 74px; */
         width: 5rem;
         height: 4rem;
     }
@@ -146,18 +137,14 @@ body {
     .heart-icon {
         width: 25px;
         height: 25px;
-        /* width="30" height="30" */
     }
     .shop-icon {
         width: 25px;
         height: 25px;
-        /* width="30" height="30" */
     }
     .line-icon {
         width: 2px;
         height: 35px;
-        /* width="2" 
-        height="42" */
     } 
 }
 @media screen and (min-width:768px) {
@@ -186,7 +173,35 @@ body {
         padding: 0.5rem 2rem; 
     }
 }
-
+@media screen and (min-width:1200px) {
+    #sign-up-container {
+        font-size: large;
+    }
+    #sign-up-div {
+        width: fit-content;
+    }
+    #nav-brand-search-cont > form > input[type="search"] {
+        width: 35rem;  
+        height: 3rem;
+        padding: 0.5rem 2rem; 
+    }
+    #nav-brand-search-cont > form > input[type="search"]::placeholder {
+        font-size: 1.3rem;
+    }
+    .navbar #nav-brand {
+        font-size: 1.4rem;
+    }
+    .navbar-brand > img {
+        width: 4rem;
+        height: 3rem;
+    }
+    .navbar .nav-item {
+        font-size: 1.3rem;
+    }
+    .navbar .dropdown-menu .dropdown-item {
+        font-size: 1rem;
+    }
+}
 .carousel {
     position: relative;
     width: 100%;
@@ -240,9 +255,6 @@ body {
     height: fit-content;
     justify-content: center;
 }
-
-/* to do: use media to make carousel-nav responsive */
-
 .carousel-indicator {
     z-index: 1;
     border: 0;
@@ -274,6 +286,11 @@ body {
 #under-slider-txt {
     margin-top: 30%;
 }
+@media screen and (min-width:1200px) {
+    #under-slider-txt {
+        font-size: 1.3rem;
+    }
+}
 .office-img-cont {
     display: flex;
     justify-content: center;
@@ -301,6 +318,20 @@ body {
     padding: 0.8rem;
     user-select: none;  
 }
+@media screen and (min-width:1200px) {
+    .green-card {
+        max-width: 25rem;
+    }
+    .green-card .card-text {
+        font-size: 1.3rem !important;
+    }
+    .green-card .card-title {
+        font-size: x-large;
+    }
+    .green-card .card-body > a {
+        font-size: 1.3rem !important;
+    }
+}
 .green-card .card-title {
     font-size: medium;
 }
@@ -311,7 +342,7 @@ body {
     font-weight: bold !important;
     font-size: 1rem;
     color: var(--gray-txt-clr);
-    height: 13.2rem;
+    /* height: 15rem; */
     padding: 1rem;
 }
 @media screen and (min-width:576px) {
@@ -329,7 +360,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: fit-content;
+    height: 22rem;
 }
 .green-card .card-body > a {
     background-color: var(--green-clr);
@@ -395,25 +426,36 @@ body {
     padding: 0.7rem; 
 }
 }
+
 .swiper-el{
     position: relative;
     border: 1px solid var(--gray-mid-clr);
     border-radius: 1.2rem;
-    max-width: 14rem;
     width: fit-content;  
+    max-width: 18rem;
     height: fit-content; 
     cursor: grab;
     padding: 0;
     user-select: none;
 }
+
 .swiper-el button {
     width: 2rem;
     height: 2rem;
     background-color: var(--gray-mid-clr);
     color: white;
-    bottom: 10rem !important;
+    bottom: 12.3rem !important;
     right: 4rem !important;
     padding: 0px;
+}
+@media screen and (min-width:1200px) {
+    .swiper-el {
+        border-radius: 1.5rem;
+        max-width: 25rem;
+    }
+    .swiper-el button  {
+        bottom:15rem !important;
+    }
 }
 #img-plus-eye-icon {
     height: 55%;
@@ -452,6 +494,7 @@ body {
 }
 #html-framework-title + p {
     color: var(--gray-txt-clr);
+    font-size: 1rem;
 }
 #html-framework-shop-icon {
     border: solid var(--gray-mid-clr) 1px;
@@ -462,6 +505,11 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+@media screen and (min-width:1200px) {
+    #html-framework-title, #html-framework-title + p  {
+        font-size: 1.3rem;
+    }
 }
 .small-card-cont {
     display: flex;
@@ -488,6 +536,11 @@ body {
 .small-card-cont .small-card img {
     width: 50px;
     height: 50px;
+}
+@media screen and (min-width:1200px) {
+    .small-card-cont .small-card-text-cont {
+        font-size: 1.3rem;
+    }
 }
 .plan-card {
     display: flex;
@@ -570,6 +623,11 @@ body {
     text-decoration-color: #EC9CD3;
     text-underline-offset: 0.7rem;
 }
+@media screen and (min-width:1200px) {
+    .mobile-app-text {
+        font-size: 1.3rem;
+    }
+}
 #mobile-app-title {
     background-color: var(--button-gray);
     padding: 0.5rem;
@@ -590,6 +648,11 @@ body {
   border: var(--gray-mid-clr) 1px solid;
   border-radius: 1.5rem;
   max-width: 18rem;
+}
+@media screen and (min-width:1200px) {
+    .mobile-app-card {
+        max-width: 25rem;
+    }
 }
 .undraw-img-cont {
     display: flex;
@@ -612,6 +675,11 @@ body {
     margin: 0 auto;
     padding: 0;
     position: relative;
+}
+@media screen and (min-width:1200px) {
+    .js-card {
+        max-width: 25rem;
+    }
 }
 .js-card .card-title {
     color: var(--gray-dark-clr);

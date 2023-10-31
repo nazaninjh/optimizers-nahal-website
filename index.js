@@ -76,8 +76,8 @@ carouselNav.addEventListener("click",(e) => {
 // start of swiper
 const swiperEl = document.querySelector(".swiper");
 var swiper = new Swiper(".slide-container", {
-  slidesPerView: "auto",
-  spaceBetween: 20,
+  slidesPerView: 'auto',
+  spaceBetween: 10,
   slidesPerGroup: 4,
   loop: true,
   centerSlide: "true",
